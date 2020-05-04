@@ -18,5 +18,8 @@
   "homepage": "https://github.com/Benknightdark/MaskMVC#readme",
   "dependencies": {
     "imask": "^6.0.3"
+  },
+  "devDependencies": {
+    "@types/jquery-mask-plugin": "^1.14.3"
   }
 }
