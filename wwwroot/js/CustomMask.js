@@ -1,4 +1,4 @@
-import { getMaskInput } from "./helpers/MaskInput.js";
+import { createMaskInput } from "./helpers/MaskInputHeler.js";
 /**
  *
  * 初始化手機號碼Input Mask
@@ -7,7 +7,7 @@ import { getMaskInput } from "./helpers/MaskInput.js";
 export const initMaskMobilePhone = (element) => {
     const queryElement = $(element)
     queryElement.data('unmask-value', '')
-    const mask = getMaskInput(element,
+    const mask = createMaskInput(element,
         {
             mask: '{\\0}{9}(00)-(000)-(000)',
             lazy: false,
