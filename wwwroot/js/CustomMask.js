@@ -1,9 +1,13 @@
-
+import { getMaskInput } from "./helpers/MaskInput.js";
+/**
+ *
+ * 初始化手機號碼Input Mask
+ * @param {*} element
+ */
 export const initMaskMobilePhone = (element) => {
-    const queryElement= $(element)
+    const queryElement = $(element)
     queryElement.data('unmask-value', '')
-    const mask = IMask(
-        element,
+    const mask = getMaskInput(element,
         {
             mask: '{\\0}{9}(00)-(000)-(000)',
             lazy: false,
@@ -12,7 +16,5 @@ export const initMaskMobilePhone = (element) => {
         });
     mask.on("accept", () => {
         queryElement.data('unmask-value', mask.unmaskedValue)
-        console.log(queryElement.data('unmask-value'))
-        
     });
 }
