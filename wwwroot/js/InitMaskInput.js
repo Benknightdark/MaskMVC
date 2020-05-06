@@ -10,7 +10,7 @@ import { initMaskMobilePhone } from './CustomMask.js';
     }
     // 表單送出時，設定mask-input value的值為unmask value
     $('form').submit(function () {
-        event.preventDefault();
+       // event.preventDefault();
         const maskInputEl = $('.mask-input');
         for (let index = 0; index < maskInputEl.length; index++) {
             const element = maskInputEl[index];

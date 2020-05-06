@@ -2,12 +2,15 @@
 @{
     ViewData["Title"] = "Home Page";
 }
-<form>
-    <input class='mask-input mask-mobile-phone' value="" >
-    <input class='mask-input mask-phone' value="">
+
+<form asp-controller="Home" asp-action="Index" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+    <input class='mask-input mask-mobile-phone' value="" asp-for="Mobile">
+      <span asp-validation-for="Mobile"></span><br/>
+    @* <input class='mask-input mask-phone' value="">
     <input class='mask-input mask-date-time' value="">
         <input class='mask-input mask-date' value="">
-        <input class='mask-input mask-time' value="">
+        <input class='mask-input mask-time' value=""> *@
 <button type='submit'>submit</button>
 </form>
 @* <div class="text-center">

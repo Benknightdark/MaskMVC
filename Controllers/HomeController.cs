@@ -20,7 +20,20 @@ namespace MaskMan.Controllers
 
         public async Task<IActionResult> Index()
         {
-            return View();
+             FormModel formModel=new FormModel();
+
+            return View(formModel);;
+        }
+        [HttpPost]
+                [ValidateAntiForgeryToken]
+
+         public async Task<IActionResult> Index(FormModel formModel)
+        {
+             if (!ModelState.IsValid)
+            {
+                return View(formModel);
+            }
+             return RedirectToAction("Privacy", "Home");
         }
 
         public IActionResult Privacy()
