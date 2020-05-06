@@ -1,9 +1,11 @@
 using System;
+using MaskMan.Extensions.Attributes;
 
 namespace MaskMan.Models
 {
     public class FormModel
     {
+        [MobileFormat]
         public string Mobile { get; set; }
         public string Tel { get; set; }
         public DateTime Birthday { get; set; }
