@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaskMan", "MaskMan.csproj", "{52E6335B-B5EA-41B0-B7A0-6FFB1CBAA470}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{52E6335B-B5EA-41B0-B7A0-6FFB1CBAA470}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52E6335B-B5EA-41B0-B7A0-6FFB1CBAA470}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52E6335B-B5EA-41B0-B7A0-6FFB1CBAA470}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52E6335B-B5EA-41B0-B7A0-6FFB1CBAA470}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {330BB840-4371-4201-848F-54D7F8B1DE47}
+	EndGlobalSection
+EndGlobal
