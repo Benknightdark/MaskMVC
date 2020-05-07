@@ -120,4 +120,7 @@
   <data name="MobileFormatError" xml:space="preserve">
     <value>手机号码格式错误</value>
   </data>
+  <data name="Required" xml:space="preserve">
+    <value>字段{0}是必需的。(簡體)</value>
+  </data>
 </root>

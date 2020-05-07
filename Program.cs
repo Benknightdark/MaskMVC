@@ -20,7 +20,9 @@ namespace MaskMan
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder
+                    .UseUrls(Environment.GetEnvironmentVariable("URLSetting"))
+                    .UseStartup<Startup>();
                 });
     }
 }

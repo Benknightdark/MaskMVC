@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
-using MaskMan.App_GlobalResources;
+using MaskMan;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,9 +30,11 @@ namespace MaskMan
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
-
-            // ª`¤J¦h°ê»y¨t³]©w
+            services.AddHttpContextAccessor();
+            services.AddRouting();
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
+            services.AddSession();
+            // ï¿½`ï¿½Jï¿½hï¿½ï¿½yï¿½tï¿½]ï¿½w
             services.AddLocalization(options => options.ResourcesPath = "App_GlobalResources");
             services.Configure<RequestLocalizationOptions>(
                 opts => {
@@ -58,6 +61,8 @@ namespace MaskMan
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+                        app.UseStaticFiles();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -68,16 +73,14 @@ namespace MaskMan
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-            app.UseStaticFiles();
             var options = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
             app.UseRequestLocalization(options.Value);
-            // app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseAuthorization();
-            
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
