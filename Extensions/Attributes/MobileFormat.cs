@@ -11,8 +11,8 @@ namespace MaskMan.Extensions.Attributes {
         public MobileFormat () { }
 
         public override bool IsValid (object value) {
-
-            return  Regex.IsMatch ((string) value, @"^09[0-9]{8}$");
+            var nValue = value == null ? "" : value;
+            return  Regex.IsMatch ((string)nValue, @"^09[0-9]{8}$");
         }
     }
 }

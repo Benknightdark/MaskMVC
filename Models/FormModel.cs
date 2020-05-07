@@ -5,7 +5,7 @@ namespace MaskMan.Models
 {
     public class FormModel
     {
-        [MobileFormat]
+        [MobileFormat(ErrorMessage = "MobileFormatError")]
         public string Mobile { get; set; }
         public string Tel { get; set; }
         public DateTime Birthday { get; set; }
