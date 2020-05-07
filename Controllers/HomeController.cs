@@ -24,7 +24,7 @@ namespace MaskMan.Controllers
 
             Response.Cookies.Append(
                 CookieRequestCultureProvider.DefaultCookieName,
-                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture("zh-Hant")),
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture("en-US")),
                 new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
             );
             FormModel formModel = new FormModel();
